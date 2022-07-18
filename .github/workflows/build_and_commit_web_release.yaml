@@ -26,10 +26,8 @@ jobs:
 
       - name: Make copy of artifacts
         run: |
-          [[ -d "${GITHUB_WORKSPACE}/artifacts" ]] && rm -r "${GITHUB_WORKSPACE}/artifacts"
-          mkdir "${GITHUB_WORKSPACE}/artifacts"
-          chmod u+x "${GITHUB_WORKSPACE}/copyfolder.sh"
-          bash "${GITHUB_WORKSPACE}/copyfolder.sh"
+          chmod u+x "${GITHUB_WORKSPACE}/createandcopytofolder.sh"
+          bash "${GITHUB_WORKSPACE}/createandcopytofolder.sh"
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
